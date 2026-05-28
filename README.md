@@ -10,23 +10,25 @@ A full-stack facilities management prototype with asset tracking, work allocatio
 npm install
 ```
 
-2. Create a `.env` file in the project root with:
+2. Start the React front-end app:
+
+```bash
+npm run dev
+```
+
+3. Open the app in your browser at the local Vite URL shown in the terminal.
+
+4. If you want to keep using the existing Express server, run it separately with:
+
+```bash
+node server.js
+```
+
+5. Create a `.env` file in the project root with any API keys you need for the backend, for example:
 
 ```text
 OPENAI_API_KEY=your_openai_api_key_here
 PORT=4000
-```
-
-3. Start the app:
-
-```bash
-npm start
-```
-
-4. Open the app in your browser:
-
-```text
-http://localhost:4000
 ```
 
 ## Features

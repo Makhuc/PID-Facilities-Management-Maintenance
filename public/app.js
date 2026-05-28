@@ -46,6 +46,72 @@ const appTiles = [
   { name: "AI Brain", detail: "Read operational signals and suggest next best actions.", color: "gold" },
 ];
 
+const workstationModules = [
+  {
+    title: 'Asset Management',
+    description: 'Track assets, lifecycle, maintenance schedules, depreciation, and inventory.',
+    icon: '📦',
+  },
+  {
+    title: 'Work Allocation',
+    description: 'Assign technicians, manage tasks, monitor SLAs, and track job completion.',
+    icon: '🛠️',
+  },
+  {
+    title: 'E-Learning Platform',
+    description: 'Training courses, certifications, compliance modules, and staff onboarding.',
+    icon: '🎓',
+  },
+  {
+    title: 'Microsoft Office Integration',
+    description: 'Integrated Word, Excel, Outlook, Teams, and SharePoint workflows.',
+    icon: '📄',
+  },
+  {
+    title: 'GPS Location Tracking',
+    description: 'Live staff tracking, route optimization, and geo-fencing for field teams.',
+    icon: '📍',
+  },
+  {
+    title: 'OHSA Compliance System',
+    description: 'Incident reporting, safety audits, compliance tracking, and inspections.',
+    icon: '⚠️',
+  },
+  {
+    title: 'AI Automation Tools',
+    description: 'AI-powered reporting, predictive maintenance, chatbot support, and analytics.',
+    icon: '🤖',
+  },
+  {
+    title: 'WhatsApp Integration',
+    description: 'Instant notifications, work order updates, and communication automation.',
+    icon: '💬',
+  },
+  {
+    title: 'Telegram Integration',
+    description: 'Team communication, bot automation, and broadcast notifications.',
+    icon: '📲',
+  },
+];
+
+const workstationStats = [
+  { label: 'Active Assets', value: '12,548' },
+  { label: 'Open Work Orders', value: '186' },
+  { label: 'Technicians Online', value: '48' },
+  { label: 'Safety Compliance', value: '97%' },
+];
+
+const workstationIntegrations = [
+  'Microsoft Teams',
+  'Outlook',
+  'SharePoint',
+  'WhatsApp API',
+  'Telegram Bot API',
+  'Azure Cloud',
+  'Power BI',
+  'GPS Mapping Services',
+];
+
 const qs = (selector) => document.querySelector(selector);
 
 function loadAuthSession() {
@@ -662,11 +728,91 @@ function renderMarketplace() {
     .join("");
 }
 
+function renderWorkstationDashboard() {
+  const html = `
+    <section class="dashboard-card">
+      <div class="dashboard-header">
+        <div>
+          <h2>Facilities Management Workstation</h2>
+          <p>Smart AI-Driven Facilities, Asset, and Workforce Management Platform</p>
+        </div>
+        <div class="dashboard-actions">
+          <button class="button-primary">Dashboard</button>
+          <button class="button-secondary">Reports</button>
+          <button class="button-secondary">AI Assistant</button>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        ${workstationStats
+          .map(
+            (stat) => `
+              <div class="stat-card">
+                <h3>${escapeHtml(stat.label)}</h3>
+                <p>${escapeHtml(stat.value)}</p>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+
+      <div class="section-block">
+        <div class="section-header">
+          <h3>Core Modules</h3>
+          <input type="text" placeholder="Search module..." disabled />
+        </div>
+
+        <div class="module-grid">
+          ${workstationModules
+            .map(
+              (module) => `
+                <article class="module-card">
+                  <div class="module-icon">${escapeHtml(module.icon)}</div>
+                  <h4>${escapeHtml(module.title)}</h4>
+                  <p>${escapeHtml(module.description)}</p>
+                  <button class="button-primary button-block">Open Module</button>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+
+      <div class="section-block feature-grid">
+        <article class="feature-card">
+          <h3>AI Automation Features</h3>
+          <ul>
+            <li>Predictive maintenance recommendations</li>
+            <li>Smart asset lifecycle analytics</li>
+            <li>AI-generated reports and dashboards</li>
+            <li>Automated incident detection</li>
+            <li>Voice and chatbot assistance</li>
+            <li>Intelligent work order routing</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h3>System Integrations</h3>
+          <div class="integration-grid">
+            ${workstationIntegrations
+              .map((integration) => `
+                <div class="integration-pill">${escapeHtml(integration)}</div>
+              `)
+              .join("")}
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  qs("#workstationDashboard").innerHTML = html;
+}
+
 function render() {
   renderAuth();
   renderMetrics();
   renderSettings();
   renderMarketplace();
+  renderWorkstationDashboard();
   renderStudentSupport();
   renderDoodle();
   renderPowerTools();
