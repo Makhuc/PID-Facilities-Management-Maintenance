@@ -16,9 +16,23 @@ npm install
 npm run dev
 ```
 
-3. Open the app in your browser at the local Vite URL shown in the terminal.
+5. Open the app in your browser at the local Vite URL shown in the terminal.
 
-4. If you want to keep using the existing Express server, run it separately with:
+## Deploy to Azure Static Web Apps
+
+1. Create a new Azure Static Web App in the Azure portal.
+2. Connect it to this GitHub repo: `Makhuc/PID-Facilities-Management-Maintenance`.
+3. Choose branch `main`.
+4. Set App location to `/` and Output location to `dist`.
+5. After the resource is created, add the deployment token to this repo's GitHub secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`.
+
+The repository now includes a workflow file at `.github/workflows/azure-static-web-apps.yml` that builds the Vite app and deploys it to Azure.
+
+6. Commit and push your changes to `main` to trigger deployment.
+
+If you need, I can help you with generating the GitHub secret and completing the Azure Static Web App setup.
+
+3. If you want to keep using the existing Express server, run it separately with:
 
 ```bash
 node server.js
