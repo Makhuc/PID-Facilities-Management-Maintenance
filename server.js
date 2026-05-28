@@ -15,7 +15,6 @@ const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
 const assets = [
   { id: 1, name: 'HVAC Unit 1', category: 'Mechanical', status: 'functional', location: 'Building A', notes: 'Routine inspection due' },
@@ -174,10 +173,6 @@ app.get('/api/outlook-teams', (req, res) => {
     teams: 'https://teams.microsoft.com',
     note: 'Use Microsoft Graph to integrate calendars, meetings, and notifications for your employer and employee workflows.'
   });
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
