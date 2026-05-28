@@ -1,0 +1,156 @@
+:root {
+  --bg: #121a27;
+  --panel: #1f2a3f;
+  --accent: #4f83ff;
+  --text: #f6f7fb;
+  --muted: #b0b8cb;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #1c2a4f, var(--bg));
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: rgba(15, 22, 39, 0.98);
+  padding: 28px 18px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar h1 {
+  margin: 0 0 24px;
+  font-size: 1.5rem;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: rgba(79, 131, 255, 0.16);
+  border-color: rgba(79, 131, 255, 0.45);
+}
+
+.main-panel {
+  padding: 28px;
+}
+
+header {
+  margin-bottom: 22px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.card {
+  background: rgba(17, 25, 42, 0.95);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+button.action {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button.action:hover {
+  filter: brightness(1.08);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  margin-top: 8px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+small {
+  color: var(--muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-functional { background: rgba(73, 210, 138, 0.16); color: #4de18a; }
+.status-damaged { background: rgba(255, 105, 105, 0.14); color: #ff9898; }
+.status-open { background: rgba(79, 131, 255, 0.16); color: #85b9ff; }
+.status-in-progress { background: rgba(255, 181, 64, 0.14); color: #ffd37b; }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facilities Management App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h1>Facility Manager</h1>
+      <nav>
+        <button data-view="dashboard">Dashboard</button>
+        <button data-view="assets">Assets</button>
+        <button data-view="upload">Excel Upload</button>
+        <button data-view="work">Work Allocation</button>
+        <button data-view="maintenance">Maintenance</button>
+        <button data-view="reports">Reports</button>
+        <button data-view="search">Search</button>
+        <button data-view="ai">AI Brain</button>
+      </nav>
+    </aside>
+    <main class="main-panel">
+      <header>
+        <div>
+          <h2 id="view-title">Dashboard</h2>
+          <p>Employer and employee controls, asset health, maintenance progress, and AI insights.</p>
+        </div>
+      </header>
+
+      <section id="content"></section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
