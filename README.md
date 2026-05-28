@@ -26,6 +26,8 @@ npm run dev
 4. Set App location to `/` and Output location to `dist`.
 5. After the resource is created, add the deployment token to this repo's GitHub secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 
+> Important: the workflow will fail if the Azure Static Web App resource is not created and the deployment token secret is missing or invalid.
+
 The repository now includes a workflow file at `.github/workflows/azure-static-web-apps.yml` that builds the Vite app and deploys it to Azure.
 
 6. Commit and push your changes to `main` to trigger deployment.
